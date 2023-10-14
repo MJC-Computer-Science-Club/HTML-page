@@ -1,0 +1,93 @@
+h1 {
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand,
+.nav-link {
+    color: green !important;
+
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.nav-item {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+p {
+    font-size: 18px;
+    /*center text*/
+    text-align: center;
+}
+
+img {
+    border-radius: 30px;
+    max-width: 50%;
+    height: auto;
+    /*center image*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+div.container1 {
+    height: 10em;
+    color: #0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* ... other styles ... */
+#img-tooltip {
+    position: absolute;
+    display: none;
+    background-color: transparent;
+    border: 1px transparent;
+    padding: 5px;
+    border-radius: 0px;
+    pointer-events: none;
+}
+
+.scrolling-text {
+    overflow: hidden;
+    position: relative;
+    /*margin-left: -800px;*/
+    font-size: 14px;
+    /* Adjust size as needed */
+    color: transparent;
+    /* Make original text transparent */
+}
+
+.scrolling-text::after {
+    content: attr(data-text);
+    position: absolute;
+    white-space: nowrap;
+    color: #0F0;
+    /* Set the color for animated text */
+    /*animation: scroll 1s linear infinite;*/
+    /*scroll out of the screen */
+    animation: scroll 12s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(300%);
+    }
+
+    to {
+        transform: translateX(-300%);
+    }
+}
