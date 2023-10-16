@@ -1,3 +1,9 @@
+body.index{
+    background-color: #666666;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
 h1 {
     color: #000000;
     font-size: 40px;
