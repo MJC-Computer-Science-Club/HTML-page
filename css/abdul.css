@@ -1,0 +1,142 @@
+
+/* Color pallate
+Light Blue 202, 240, 248
+Baby Blue 144, 224, 239
+Aqua Blue 0, 180, 216
+
+
+*/
+/* General to Specific CSS */
+body
+{
+  margin:0;
+  padding:0;
+  background-color:rgb(0,180,216);
+  font-family:'Sometype Mono';
+  color:white;
+
+}
+
+
+
+.landing-page{
+ 
+  height:100vh;
+  width:100%;
+  background-color:rgb(0,180,216);
+
+  margin:0;
+ 
+ 
+
+}
+
+
+.landing-page h1{
+  margin:0;
+  text-align:center;
+  font-size:10vh;
+  margin-bottom:10vh;
+  color:rgb(202,240,248);
+}
+
+.abdul-image{
+  max-width:100%;
+
+ 
+ 
+}
+
+
+
+.image-div{
+  display:inline-block;
+  padding: 3vw;
+  
+
+  width:33%;
+ margin:0;
+
+}
+  
+
+.grovetext{
+  font-size:25px;
+
+}
+.grovetextdiv{
+margin-right:10%;
+width:30vw;
+height: 30vh;
+padding-top:0;
+margin-top:0;
+
+}
+
+/* Landing Image + text */
+.flexbox{
+width:100vw;
+height:100vh;
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content:space-between;
+background-color:black;
+
+
+
+margin:0;
+padding:0;
+
+
+
+}
+
+
+
+
+
+
+/**
+.flexbox-container{
+
+  display:flex;
+
+
+  background-color:orange;
+
+
+  
+}
+
+
+
+
+.flexbox-item{
+  width:200px;
+  margin:10px;
+  border:3px solid #333;
+  background-color:rgb(206, 231, 231);
+  order: 3;
+  
+
+}
+
+.flexbox-item-1{
+  min-height:100px;
+  align-self:flex-end;
+
+}
+.flexbox-item-2{
+  min-height:200px;
+  flex-grow:2;
+  align-self:center;
+  order:1;
+}
+.flexbox-item-3{
+  min-height:300px;
+  flex-grow:1;
+  order:2;
+}
+
+*/
