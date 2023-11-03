@@ -1,6 +1,8 @@
 // a minigame
 const player = document.getElementById("guy");
 
+let fell = false;
+
 const leftImage = 'img/guy-left.png'
 const rightImage = 'img/guy-right.png'
 
@@ -159,7 +161,7 @@ let platforms = [
 let textBoxes = [
   {
     x: 100,
-    y: 525,
+    y: 500,
     text: "My name is Ben, and I'm a CS student at MJC. To see more about me, use the arrow keys to move arround and jump.",
     width: 200,
     backgroundColor: "white",
@@ -167,7 +169,7 @@ let textBoxes = [
   },
   {
     "x": 1427.4311182072604,
-    "y": 550.4229017566688,
+    "y": 500,
     "text": "I first got into programming when I was quite young, because I wanted to make a game.  I started with Lua, which thinking back was probably not the easiest way to start, but I loved it.",
     "width": 200,
     "backgroundColor": "white",
@@ -175,7 +177,7 @@ let textBoxes = [
 },
 {
   "x": 2300.276392308591,
-  "y": 566.0377358490566,
+  "y": 500,
   "width": 200,
   "text": "I continued to make games using Lua for a while, but my interest in coding really got a boost when I joined my high school's robotics team. Robots are cool. Coding robots is even cooler.",
   "backgroundColor": "white",
@@ -183,7 +185,7 @@ let textBoxes = [
 },
 {
   "x": 3630.7314323657,
-  "y": 504.8414023372287,
+  "y": 500,
   "width": 200,
   "text": "At this point there was no going back.  I was hooked.  I took Intro to Programming at MJC while I was still in high school, and I've been learning more ever since",
 },
@@ -197,7 +199,7 @@ let textBoxes = [
 },
 {
   "x": 5852.097609849285,
-  "y": 450.016694490818,
+  "y": 450,
   "width": 200,
   "text": "Currently, I'm finishing up my last few classes at MJC while working on projects, being the president of the MJC Computer Science Club, and looking for a job.",
   "backgroundColor": "white",
@@ -260,6 +262,8 @@ function gameLoop() {
         LastPlayerPosY = 0;
         PlayerSpeedX = 0;
         PlayerSpeedY = 0;
+        const audio = new Audio("sounds/mario-falling.mp3");
+        audio.play();
       }
       else if (platform.effect === "launch") {
         PlayerSpeedY = -20;
@@ -365,14 +369,24 @@ function gameLoop() {
   }
 
   // detect if the player has fallen off the screen
-  if (PlayerPosY > 2000) {
-    addMessage("You fell off the screen!", 2000);
-    PlayerPosX = 400;
-    PlayerPosY = 0;
-    LastPlayerPosX = 400;
-    LastPlayerPosY = 0;
-    PlayerSpeedX = 0;
-    PlayerSpeedY = 0;
+  if (PlayerPosY > 600) {
+    // play a sound
+    if (!fell){
+      addMessage("You fell off the screen!", 2000);
+      const audio = new Audio("sounds/mario-falling.mp3");
+      audio.play();
+      fell = true;
+    }
+    // wait 2 seconds, then reset the player
+    setTimeout(() => {
+      PlayerPosX = 400;
+      PlayerPosY = 0;
+      LastPlayerPosX = 400;
+      LastPlayerPosY = 0;
+      PlayerSpeedX = 0;
+      PlayerSpeedY = 0;
+      fell = false;
+    }, 2000);
   }
   
 }
@@ -402,7 +416,7 @@ document.body.style.overflow = "hidden";
 // make sure the page cannot be zoomed
 document.body.style.touchAction = "none";
 
-addMessage("Press the arrow keys to move arround", 5000);
+addMessage("Press the arrow keys to move around", 5000);
 
 // start the game loop
 gameLoop();
