@@ -1,0 +1,57 @@
+body, html
+{
+   background-color: #afd9db; 
+   margin: 0;
+   padding: 0;
+   display: inline-block;
+}
+
+h1
+{
+    color: black;
+    font-size: 45px;
+    font-family: "Press Start 2P";
+    text-align: center; 
+}
+
+.text
+{
+    font-family: "Press Start 2P";
+}
+
+#name
+{
+    margin-bottom: 100px;  
+    padding-bottom: 10px;
+    margin-left: 100px;
+    padding-left: 30px;
+    padding-top: 10px;
+    background-color: red;
+    font-size: 35px;
+    transition: 1000ms ease;
+    color: rgb(9, 9, 107);
+
+}
+
+.container
+{
+    display: flex;
+}
+
+.box
+{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin: 40px;
+}
+
+
+.image
+{
+    width: 500px;
+    transition: 1000ms ease;
+}
+
+
+
